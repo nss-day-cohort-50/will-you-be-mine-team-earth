@@ -1,0 +1,16 @@
+h1 {
+    font-size: xxx-large;
+    display: flex;
+    justify-content: center;
+}
+ul {
+    list-style-type: none;
+    padding-inline-start: 0.25rem;
+}
+
+article.facilities {
+    display: flex;
+    align-content: space-around;
+    justify-content: space-between;
+    margin: 4em;
+}

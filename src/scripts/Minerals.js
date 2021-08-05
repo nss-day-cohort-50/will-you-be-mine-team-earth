@@ -1,27 +1,28 @@
 import { getMinerals } from "./database.js"
 
-
 document.addEventListener(
-    "change",
+    "click",
     (event) => {
-        if (event.target.name === "wheel") {
-            setWheels(parseInt(event.target.value))
+
+        if (event.target.id === "btn-facility-1") {
+           window.alert("fuuuuk")
         }
     }
 )
 
-const minerals = getMinerals()
+
 export const Minerals = () => {
+    const minerals = getMinerals()
     let html = "<ul>"
 
     const listItemsArray = minerals.map(
         (mineral) => {
-            return `li>
+            return `<li>
             <input type="radio" name="mineral" value="${mineral.id}" /> ${mineral.type} 
             </li>`
         }
     )
-    html += listItemsArray
+    html += listItemsArray.join("")
     html += "</ul>"
     return html
 }
