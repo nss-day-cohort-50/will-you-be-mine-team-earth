@@ -5,7 +5,7 @@ const database = {
         {id: 3, type: "adimantium", stock: 8 },
         {id: 4, type: "hopium", stock: 8},
     ],
-    governers: [
+    governors: [
         {id: 1, name: "Omni-man", isActive: true},
         {id: 2, name: "Machine Head", isActive: true},
         {id: 3, name: "Atom Eve", isActive: false},
