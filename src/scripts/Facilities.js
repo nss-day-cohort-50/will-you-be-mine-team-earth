@@ -1,3 +1,4 @@
+
 //facilities active only enabled when gov is chosen
 
 //when choose facility --> current mineral names/amounts displays
@@ -25,4 +26,5 @@ export const FacilityList = () => {
     html += facilitiesArray.join("")
     return html
 }
+
 

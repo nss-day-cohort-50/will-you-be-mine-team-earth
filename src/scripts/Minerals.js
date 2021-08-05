@@ -5,7 +5,7 @@ document.addEventListener(
     (event) => {
 
         if (event.target.id === "btn-facility-1") {
-           window.alert("fuuuuk")
+           window.alert(event.target.id)
         }
     }
 )

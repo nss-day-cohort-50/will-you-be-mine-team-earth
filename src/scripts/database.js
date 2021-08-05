@@ -6,6 +6,7 @@ const database = {
         {id: 4, type: "hopium", stock: 8},
     ],
     governors: [
+
         {id: 1, name: "Omni-man", isActive: true, colonyId: 1 },
         {id: 2, name: "Machine Head", isActive: true, colonyId: 2},
         {id: 3, name: "Atom Eve", isActive: false, colonyId: 3},
@@ -28,6 +29,7 @@ const database = {
 
     orderBuilder: {}
 
+
     }
 
 
@@ -37,6 +39,7 @@ const database = {
     export const getGovernors = () => {
         return database.governors.map(governor => ({...governor}))
     }
+
     export const getColonies = () => {
         return database.colonies.map(colony => ({...colony}))
     }
@@ -50,4 +53,5 @@ const database = {
     }
     export const setFacility = (id) => {
         database.orderBuilder.facilityId = id
+
     }

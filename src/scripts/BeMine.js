@@ -1,5 +1,6 @@
 import { Minerals } from "./Minerals.js"
 import { Governors } from "./Governors.js"
+
 import { FacilityList } from "./Facilities.js"
 // import { Colonies } from "./Colonies.js"
 // import { availableResources } from "./database.js"
@@ -7,9 +8,7 @@ import { FacilityList } from "./Facilities.js"
 export const BeMine = () => {
     return `
     <h1>Active Mining Facilities</h1>
-       
-        <div class="facilityList">
-            ${FacilityList()}
+
         </div>
 
 
@@ -31,8 +30,6 @@ export const BeMine = () => {
     <form class="governors">
         ${Governors()}
         </select>
-        <br><br>
-        <input type="submit" value="Submit">
     </form>
     <div class="availableResources">
     <h2>Available Resources for Colony</h2>
