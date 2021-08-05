@@ -1,4 +1,5 @@
 import { Minerals } from "./Minerals.js"
+import { Governors } from "./Governors.js"
 
 
 
@@ -25,15 +26,7 @@ export const BeMine = () => {
         </div>
     </article>
     <form class="governors">
-        <label for="governors">Choose a Governor:</label>
-
-        <select name="governers" id="governors" required autofocus>
-            <option value="omni-man">Omni-man</option>
-            <option value="doc-seismic">Doc Siesmic</option>
-            <option value="doc-seismic">Doc Siesmic</option>
-            <option value="allen-the-alien">Allen the Alien</option>
-            <option value="atom-eve">Atom Eve</option>
-            <option value="machine-head">Machine Head</option>
+        ${Governors()}
         </select>
         <br><br>
         <input type="submit" value="Submit">
