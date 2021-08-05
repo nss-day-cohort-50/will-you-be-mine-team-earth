@@ -1,5 +1,6 @@
 import { Minerals } from "./Minerals.js"
 import { Governors } from "./Governors.js"
+import { Facility } from "./Facilities.js"
 
 
 
@@ -13,8 +14,7 @@ export const BeMine = () => {
           <div id="minerals_1"></div>
         </div>
         <div class="facility--2">
-            <h2>Facility 2</h2>
-            ${Minerals()}
+            ${Facility(11, "Portal One")}
         </div>
         <div class="facility--3">
             <h2>Facility 3</h2>
@@ -28,8 +28,6 @@ export const BeMine = () => {
     <form class="governors">
         ${Governors()}
         </select>
-        <br><br>
-        <input type="submit" value="Submit">
     </form>
     `
 }
