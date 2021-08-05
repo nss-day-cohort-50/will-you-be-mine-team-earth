@@ -14,3 +14,8 @@ article.facilities {
     justify-content: space-between;
     margin: 4em;
 }
+
+.facilityList {
+    display: flex;
+    justify-content: space-between;
+}
