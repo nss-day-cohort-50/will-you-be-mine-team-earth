@@ -8,13 +8,10 @@ import { FacilityList } from "./Facilities.js"
 export const BeMine = () => {
     return `
     <h1>Active Mining Facilities</h1>
-
-        </div>
-
+        ${FacilityList()}
 
     <article class="orderBuilder"> 
     <h2>Chosen Minerals</h2>
-       
     </article>
 
 
