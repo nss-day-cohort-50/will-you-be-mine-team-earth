@@ -26,6 +26,18 @@ export const BeMine = () => {
     </article>
 
     <article class="governorsAndAvailableResources">
+
+    <article class="orderBuilder"> 
+    <h2>Chosen Minerals</h2>
+        ${orderBuilder()}
+    </article>
+
+    <article>
+     <button id="orderButton">Purchase All Minerals</button>
+    </article>
+
+    <article class="governorsAndAvailableResources">
+
     <form class="governors">
         ${Governors()}
         </select>
@@ -41,6 +53,6 @@ export const BeMine = () => {
     `
 }
 
-    
+
 
 
