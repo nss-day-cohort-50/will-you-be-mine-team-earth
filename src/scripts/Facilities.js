@@ -6,10 +6,9 @@ document.addEventListener(
     (event) => {
         const itemClicked = event.target
         const id = ".facilityMineralId--" + event.target.value
-        if (itemClicked.class = "portal") {
-            window.alert('fuuouk')  
+        if (itemClicked.class = "portal") {  
             let el = document.querySelector(id)
-            el.innerHTML = ""
+            //el.innerHTML = ""
         }
     }
 )
