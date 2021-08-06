@@ -8,13 +8,21 @@ export const BeMine = () => {
     <h1>Active Mining Facilities</h1>
         ${FacilityList()}
 
-
-        <form class="governors">
+    <article class="governorsColonyAvailableResources">
+       
+    <form class="governors">
             ${Governors()}
         </form>
+
+        <div class="ColonyAvailableResources">
+            <h3>Your Colony's Mineral Inventory</h3>
+            ${ColonyAvailableResources()}
+        </div>
+        
+    </article>
     `   
 }
 
 
-
+//CT- Article wrapped around governer form and colony permanent state renderding div for flexbox purposes
 
