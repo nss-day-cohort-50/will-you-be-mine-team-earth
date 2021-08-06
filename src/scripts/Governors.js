@@ -14,9 +14,10 @@ const governors = getGovernors()
 export const Governors = () => {
     let html = `
     <label for="governors">Choose a Governor:</label>
-    <select name="governers" id="governors" required autofocus onchange="window.alert(this.options[this.selectedIndex].text)">`
+    <select name="governers" id="governors" >`
     const listItemsArray = governors.map(
         (governor) => {
+            if (governor.isActive === true)
             return `    
             <option name="governor" value="${governor.id}">${governor.name}</option>`
         }
@@ -27,3 +28,5 @@ export const Governors = () => {
     return html
 }
 
+
+//required autofocus onchange="window.alert(this.options[this.selectedIndex].text)"
