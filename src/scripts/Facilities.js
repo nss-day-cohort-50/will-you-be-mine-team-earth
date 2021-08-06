@@ -29,7 +29,6 @@ export const FacilityList = () => {
             } else {
                 return `<div class="facilityMineralId--${facility.id}"><h1>${facility.name}</h1>`
             }
-        }
 
     ) 
     html += facilitiesArray.join("")
