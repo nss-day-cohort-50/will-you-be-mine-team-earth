@@ -1,26 +1,38 @@
-
-//facilities active only enabled when gov is chosen
-
-//when choose facility --> current mineral names/amounts displays
-//If mineral amount = 0, don't display
-
-//HOW DOES IT DISPLAY? render entire radio buttion list beneath button when clicked.
-
-//click new facility button, previously rendered facility's list should disappear
-
 import { getFacilities } from "./database.js"
+import { Minerals } from "./Minerals.js"
+
+
+document.addEventListener(
+    "click",
+    (event) => {
+        debugger
+        const itemClicked = event.target
+        const id = ".facilityMineralId--" + event.target.value
+        if (itemClicked.class = "portal") {
+            window.alert('fuuouk')  
+            let el = document.querySelector(id)
+            el.innerHTML = "Minerals()"
+        }
+    }
+)
+
 
 const facilities = getFacilities()
-
 export const FacilityList = () => {
-    
-    let html = `<div class="facilityList">`
+    let html = `
+    <div class="facilityList">`
 
     const facilitiesArray = facilities.map(
         (facility) => {
-            return `<div><button name="portal-1" value="${facility.id}"> ${facility.name} <br></br> Enter the Portal and Collect Thy Metals  </button></div>`
-
+            if (facility.isActive) {
+                return `<div class="facilities"><h1>${facility.name}</h1><button class="portal--${facility.id}" value="${facility.id}">${facility.name} is Open <br></br> Enter and Collect Thy Metals  </button></div><div class="facilityMineralId--${facility.id}>`
+            } else {
+                return `<div class="facilityMineralId--${facility.id}"><h1>${facility.name}</h1>`
+            }
+<<<<<<< HEAD
         }
+=======
+>>>>>>> 338e6579b66ec0a065fed801fa3c1157a1715269
 
     ) 
     html += facilitiesArray.join("")
