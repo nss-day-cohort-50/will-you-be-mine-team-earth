@@ -18,7 +18,7 @@ export const Minerals = () => {
     const listItemsArray = minerals.map(
         (mineral) => {
             return `<li>
-            <input type="radio" name="mineral" value="${mineral.id}" /> ${mineral.type} 
+            <input type="radio" name="mineral" value="${mineral.id}" /> ${mineral.type} ${mineral.stock}
             </li>`
         }
     )
@@ -26,3 +26,5 @@ export const Minerals = () => {
     html += "</ul>"
     return html
 }
+
+//C/K added ${mineral.stock} to line 21
