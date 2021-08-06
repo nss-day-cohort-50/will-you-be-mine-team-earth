@@ -27,7 +27,7 @@ const database = {
 
     availableResources: [],
 
-    orderBuilder: {}
+    orderBuilder: {} //hint from slack:  property:key pairs of {chosenGovernor: integer, selectedFacility: integer, selectedMinerals: []
 
 
     }

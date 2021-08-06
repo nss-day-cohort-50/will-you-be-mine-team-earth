@@ -1,4 +1,4 @@
-import { Minerals } from "./Minerals.js"
+
 import { Governors } from "./Governors.js"
 
 import { FacilityList } from "./Facilities.js"
@@ -9,12 +9,9 @@ export const BeMine = () => {
     return `
     <h1>Active Mining Facilities</h1>
         ${FacilityList()}
-        </div>
-
 
     <article class="orderBuilder"> 
     <h2>Chosen Minerals</h2>
-       
     </article>
 
 
