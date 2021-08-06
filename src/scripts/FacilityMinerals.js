@@ -11,9 +11,9 @@ document.addEventListener(
 )
 
 
-export const Minerals = () => {
+export const facilityMinerals = () => {
     const minerals = getMinerals()
-    let html = "<ul>"
+    let html = "<ul id='facilityMinerals' >"
 
     const listItemsArray = minerals.map(
         (mineral) => {
