@@ -8,15 +8,18 @@ ul {
     padding-inline-start: 0.25rem;
 }
 
-article.facilities {
-    display: flex;
-    align-content: space-around;
-    justify-content: space-between;
-    margin: 4em;
-}
 
 .facilityList {
     display: flex;
     justify-content: space-between;
     margin: 3rem;
+}
+
+.governors {
+    display: flex;
+    justify-content: end;
+    position: absolute;
+    bottom: 0;
+    margin: 5em 15em;
+}
 }

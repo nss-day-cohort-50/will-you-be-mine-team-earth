@@ -24,7 +24,7 @@ export const Governors = () => {
     )
     html += listItemsArray.join(" ")
 
-    html += `</form>`
+    html += `</select>`
     return html
 }
 

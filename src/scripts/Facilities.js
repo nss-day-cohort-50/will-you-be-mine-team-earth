@@ -1,17 +1,15 @@
 import { getFacilities } from "./database.js"
-import { Minerals } from "./Minerals.js"
 
 
 document.addEventListener(
     "click",
     (event) => {
-        debugger
         const itemClicked = event.target
         const id = ".facilityMineralId--" + event.target.value
         if (itemClicked.class = "portal") {
             window.alert('fuuouk')  
             let el = document.querySelector(id)
-            el.innerHTML = "Minerals()"
+            el.innerHTML = ""
         }
     }
 )
@@ -25,15 +23,11 @@ export const FacilityList = () => {
     const facilitiesArray = facilities.map(
         (facility) => {
             if (facility.isActive) {
-                return `<div class="facilities"><h1>${facility.name}</h1><button class="portal--${facility.id}" value="${facility.id}">${facility.name} is Open <br></br> Enter and Collect Thy Metals  </button></div><div class="facilityMineralId--${facility.id}>`
+                return `<div class="facilityMineralId--${facility.id}"><h1>${facility.name}</h1><button class="portal--${facility.id}" value="${facility.id}">${facility.name} is Open <br></br> Enter and Collect Thy Metals  </button></div><div class="facilityMineralId--${facility.id}></div>`
             } else {
-                return `<div class="facilityMineralId--${facility.id}"><h1>${facility.name}</h1>`
+                return `<div class="facilityMineralId--${facility.id}"><h1>${facility.name}</h1> </div>`
             }
-<<<<<<< HEAD
         }
-=======
->>>>>>> 338e6579b66ec0a065fed801fa3c1157a1715269
-
     ) 
     html += facilitiesArray.join("")
     html += `</div>`
