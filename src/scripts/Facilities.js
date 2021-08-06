@@ -7,7 +7,6 @@ import { facilityMinerals } from "./FacilityMinerals.js"
 document.addEventListener(
     "click",
     (event) => {
-        debugger
         const itemClicked = event.target
         if (itemClicked.id.startsWith("facility")) {
         const [,mineralListId] = itemClicked.id.split("--")
