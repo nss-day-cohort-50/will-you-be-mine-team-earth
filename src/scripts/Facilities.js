@@ -15,7 +15,6 @@ export const FacilityList = () => {
     const facilitiesArray = facilities.map(
         (facility) => {
             if (facility.isActive) {
-                debugger
                 return `
                 <div class="facilityId--${facility.id}">
                 <h1>${facility.name}</h1>

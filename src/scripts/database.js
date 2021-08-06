@@ -55,7 +55,6 @@ const database = {
         database.orderBuilder.facilityId = id
     }
     export const setGovernor = (id) => {
-        debugger
         database.orderBuilder.governorId = id
         document.dispatchEvent(new CustomEvent("stateChanged"))
     }
