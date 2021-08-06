@@ -17,9 +17,8 @@ const chosenGovernor = getOrderBuilder()
 const governors = getGovernors()
 export const Governors = () => {
     let html = `
-    <label for="governors">Choose a Governor:</label>
     <select id="governors" >
-    <option name="governor" value="0">Choose Your Governor</option>`
+    <option name="governor" value="0">Choose Your Governor...</option>`
     const listItemsArray = governors.map(
         (governor) => {
             if (governor.id === chosenGovernor.governorId) {
