@@ -2,8 +2,9 @@ import { getFacilities } from "./database.js"
 import { getOrderBuilder } from "./database.js"
 import { facilityMinerals } from "./FacilityMinerals.js"
 
-
-
+//captures event click and creates a var with id of event target
+//calls facilityMinerals to render minerals radio list in the element with 
+//same id number-string as event.target displaying the minerals below the button clicked
 document.addEventListener(
     "click",
     (event) => {
