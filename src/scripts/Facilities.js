@@ -2,21 +2,9 @@ import { getFacilities } from "./database.js"
 import { getOrderBuilder } from "./database.js"
 
 
-
-// document.addEventListener(
-//     "click",
-//     (event) => {
-        
-//         const itemClicked = event.target
-//         if (itemClicked.class = "portal") {  
-//             const id = ".facilityMineralId--" + event.target.value
-//             let el = document.querySelector(id)
-//             el.innerHTML = `<h1>fooook</h1>`
-//         }
-//     }
-// )
-
-
+//import builder object and save in var state
+//state hold governorId after governor has been selected by users
+//the governor id is checked and then the button are rendered usable
 const facilities = getFacilities()
 export const FacilityList = () => {
     const state = getOrderBuilder()

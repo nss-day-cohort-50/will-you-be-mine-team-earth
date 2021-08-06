@@ -1,7 +1,7 @@
 import { getGovernors } from "./database.js" 
 import { setGovernor } from "./database.js" 
 
-
+//listens for user to select governor and adds governor.id to trans state
 document.addEventListener(
     "change",
     (event) => {
@@ -11,6 +11,8 @@ document.addEventListener(
     }
 )
 
+
+//rendesr govenor option list with the isActive=false governors ommitted
 const governors = getGovernors()
 export const Governors = () => {
     let html = `
