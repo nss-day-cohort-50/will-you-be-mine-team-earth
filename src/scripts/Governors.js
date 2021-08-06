@@ -1,20 +1,21 @@
 import { getGovernors } from "./database.js" 
+import { setGovernor } from "./database.js" 
 
 
-// document.addEventListener(
-//     "change",
-//     (event) => {
-//         if (event.target.name === "governor") {
-//             window.alert("fuuuuk")
-//         }
-//     }
-// )
+document.addEventListener(
+    "change",
+    (event) => {
+        if (event.target.name === "governors") {
+            setGovernor(parseInt(event.target.value))
+        }
+    }
+)
 
 const governors = getGovernors()
 export const Governors = () => {
     let html = `
     <label for="governors">Choose a Governor:</label>
-    <select name="governers" id="governors" >`
+    <select name="governors" id="governors" >`
     const listItemsArray = governors.map(
         (governor) => {
             if (governor.isActive === true)
