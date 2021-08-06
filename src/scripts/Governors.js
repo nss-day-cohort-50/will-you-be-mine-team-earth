@@ -12,7 +12,7 @@ document.addEventListener(
 )
 
 
-//rendesr govenor option list with the isActive=false governors ommitted
+//renders govenor option list with the isActive=false governors ommitted
 const governors = getGovernors()
 export const Governors = () => {
     let html = `
