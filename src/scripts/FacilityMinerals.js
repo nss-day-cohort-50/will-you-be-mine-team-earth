@@ -1,4 +1,4 @@
-import { getMinerals } from "./database.js"
+import { getFacilityMinerals } from "./database.js"
 
 document.addEventListener(
     "click",
@@ -12,13 +12,13 @@ document.addEventListener(
 
 
 export const facilityMinerals = () => {
-    const minerals = getMinerals()
+    const facilityMinerals = getFacilityMinerals()
     let html = "<ul id='facilityMinerals' >"
 
-    const listItemsArray = minerals.map(
-        (mineral) => {
+    const listItemsArray = facilityMinerals.map(
+        (facilityMineral) => {
             return `<li>
-            <input type="radio" name="mineral" value="${mineral.id}" /> ${mineral.type} 
+            <input type="radio" name="mineral" value="${facilityMineral.id}" /> ${facilityMineral.stock} tons of ${facilityMineral.type} 
             </li>`
         }
     )

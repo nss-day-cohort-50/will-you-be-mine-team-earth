@@ -1,5 +1,5 @@
 const database = {
-    minerals: [
+    facilityMinerals: [
         {id: 1, type: "sneezium", stock: 8},
         {id: 2, type: "meethril", stock: 8},
         {id: 3, type: "adimantium", stock: 8 },
@@ -22,7 +22,7 @@ const database = {
         {id: 1, name: "Portal 1",  isActive: true},
         {id: 2, name: "Portal 2",  isActive: true},
         {id: 3,name: "Portal 3",  isActive: true},
-        {id: 4, name: "Portal 4", isActive: false} 
+        {id: 4, name: "Portal 4", isActive: true} 
     ],
 
     availableResources: [],
@@ -33,8 +33,8 @@ const database = {
     }
 
 
-    export const getMinerals = () => {
-        return database.minerals.map(mineral => ({...mineral}))
+    export const getFacilityMinerals = () => {
+        return database.facilityMinerals.map(facilityMineral => ({...facilityMineral}))
     }
     export const getGovernors = () => {
         return database.governors.map(governor => ({...governor}))
