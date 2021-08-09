@@ -14,6 +14,8 @@ import { getOrderBuilder, getFacilityMinerals, getFacilities } from "./database.
 //     }
 // )
 
+
+//a fucntion to match the name of the facility to the id of the transient state
 const orderBuilder = getOrderBuilder()
 
 const findChosenFacility = () => {
@@ -40,6 +42,8 @@ const findChosenMineral = () => {
     return chosenMineral
 }
 
+
+// //a fucntion to match the name of the mineral to the id of the transient state
 export const ChosenOptions = () => {
     debugger
 const chosenOptions = document.getElementsByClassName("choices")
