@@ -1,5 +1,4 @@
-import { getFacilities } from "./database.js"
-import { getOrderBuilder } from "./database.js"
+import { getOrderBuilder, getFacilities, setFacility } from "./database.js"
 import { facilityMinerals } from "./FacilityMinerals.js"
 
 //captures event click and creates a var with id of event target
@@ -8,12 +7,14 @@ import { facilityMinerals } from "./FacilityMinerals.js"
 document.addEventListener(
     "click",
     (event) => {
+        debugger
         const itemClicked = event.target
         if (itemClicked.id.startsWith("facility")) {
         const [,mineralListId] = itemClicked.id.split("--")
         const minerals = facilityMinerals()
         const mineralList = document.getElementById(mineralListId)
         mineralList.innerHTML = minerals
+        setFacility(parseInt(mineralListId))
         }
     }
 )

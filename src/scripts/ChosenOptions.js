@@ -1,20 +1,6 @@
 import { getOrderBuilder, getFacilityMinerals, getFacilities } from "./database.js"
 
 
-// document.addEventListener(
-//     "click",
-//     (event) => {
-//         const itemClicked = event.target.name
-//         if (itemClicked === "mineral") {
-//         const chosenMineral = 
-//         const mineralList = document.getElementById(mineralListId)
-//         mineralList.innerHTML = minerals
-//         setFacility(parseInt(mineralListId))
-//         }
-//     }
-// )
-
-
 //a fucntion to match the name of the facility to the id of the transient state
 const orderBuilder = getOrderBuilder()
 
@@ -46,12 +32,12 @@ const findChosenMineral = () => {
 // //a fucntion to match the name of the mineral to the id of the transient state
 export const ChosenOptions = () => {
     debugger
-const chosenOptions = document.getElementsByClassName("choices")
+const chosenOptions = document.getElementById("choices")
 const chosenFacility =  findChosenFacility()
 const chosenMineral =  findChosenMineral()
-let html = chosenOptions.innerHTML 
-html += `<div>1 ton of ${chosenMineral} from ${chosenFacility}</div>`
+let html = `<div>1 ton of ${chosenMineral} from ${chosenFacility}</div>`
+chosenOptions.innerHTML = html
 
-return html
+return chosenOptions.innerHTML
 }
     
