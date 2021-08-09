@@ -62,7 +62,7 @@ const database = {
         return database.orderBuilder
     }
     
-    export const addPurchase = () =>{
+    export const addPurchase = () => {
     const newOrder = {...database.orderBuilder}
     const lastIndex = database.availableResources.length - 1
     newOrder.id = database.availableResources[lastIndex].id + 1
