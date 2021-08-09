@@ -1,3 +1,17 @@
+import { ColonyAvailableResources } from "./ChosenOptions.js"
+
+
+document.addEventListener(
+    "change",
+    (event) => {
+        if (event.target.name === "metal") {
+            ColonyAvailableResources(parseInt(event.target.value))
+        }
+    }
+)
+
+
+
 //hint from slack: think 'ColonyMinerals' export const ColonyAvailableResources = () => {
         const newOrder = {...database.orderBuilder}
         const lastIndex = database.availableResources.length - 1
@@ -9,7 +23,6 @@
         document.dispatchEvent(new CustomEvent("stateChanged"))
     }
  
-}
  
  
 //<article class="governorsColonyAvailableResources">   <div class="ColonyAvailableResources">< /div>    </article>

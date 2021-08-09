@@ -5,8 +5,9 @@
 
 //  C/K this function is called in BeMine.js to render the completed order's html.  should be type and amount.
 
-const ColonyAvailableResources = (permanentObjectState) => { 
+export const ColonyAvailableResources = (permanentObjectState) => { 
     // let html = "<ul>" 
      return `<ul>${availableResources.selectedMinerals}</ul>`
  }
+
  
