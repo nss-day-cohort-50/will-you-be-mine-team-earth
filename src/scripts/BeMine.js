@@ -4,29 +4,26 @@ import { ColonyAvailableResources } from "./ChosenOptions.js"
 
 export const BeMine = () => {
     return `
-    <h1>Active Mining Facilities</h1>
+    <h1>Mining Marketplace</h1>
         ${FacilityList()}
 
-   
-    <div id="choices"></div>
+        <article class="chosenMinerals">
+        <h2>You have chosen the following minerals</h2>
+        <div id="choices"></div>
+            <button id="purchaseButton">Purchase All Minerals</button>     
+        </article>
+
+        <aside class="aside">
         <form class="governors">
             ${Governors()}
         </form>
-
-        <article class="mineralsPurchased">
-        <h2>You have chosen the following minerals</h2>
-        <section>
-            <button id="purchaseButton">Purchase All Minerals</button>
-        </section>
-        </article>
-
-        <article class="colonyResources">
+            <section class="purchasedMinerals">
         <h2>Available Resources For Colony</h2>
             ${ColonyAvailableResources()}
-        </article>
+            </section>
+        </aside>
     `   
 }
-
 
 
 

@@ -16,18 +16,32 @@ ul {
 }
 
 #governors {
-    font-size: xx-large;
+    font-size: x-large;
     display: flex;
     justify-content: end;
-    position: absolute;
     bottom: 0;
-    margin: 4em 10em;
+    
 }
 
-.mineralsPurchased {
+.chosenMinerals {
+    border: dashed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+.aside {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.purchasedMinerals {
     border: dashed;
 }
 
-.colonyResources {
-    border: dashed;
+#purchaseButton {
+    margin-top: 8rem;
+    margin-bottom: 1rem;
 }
