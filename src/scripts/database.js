@@ -48,8 +48,8 @@ const database = {
     }
 
 
-    export const setMineral = (id) => {
-        database.orderBuilder.mineralId = id
+    export const setFacilityMineral = (id) => {
+        database.orderBuilder.facilityMineralId = id
     }
     export const setFacility = (id) => {
         database.orderBuilder.facilityId = id

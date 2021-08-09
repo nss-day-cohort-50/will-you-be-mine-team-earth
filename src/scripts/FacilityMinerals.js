@@ -1,11 +1,14 @@
-import { getFacilityMinerals } from "./database.js"
+import { getFacilityMinerals, setFacilityMineral } from "./database.js"
+import { ChosenOptions } from "./ChosenOptions.js"
 
 document.addEventListener(
     "click",
     (event) => {
-
-        if (event.target.id === "btn-facility-1") {
-           window.alert(event.target.id)
+        debugger
+        if (event.target.name === "mineral") {
+           window.alert(event.target.value)
+          setFacilityMineral(parseInt(event.target.value))
+          ChosenOptions()
         }
     }
 )
