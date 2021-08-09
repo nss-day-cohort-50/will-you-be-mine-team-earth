@@ -16,6 +16,7 @@ const findChosenFacility = () => {
     return chosenFacility
 }
 
+//a fucntion to match the name of the mineral to the id of the transient state
 const findChosenMineral = () => {
     const facilityMinerals = getFacilityMinerals()
     let chosenMineral = ""
