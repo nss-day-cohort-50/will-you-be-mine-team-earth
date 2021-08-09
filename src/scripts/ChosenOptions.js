@@ -48,7 +48,7 @@ const chosenOptions = document.getElementById("choices")
 const chosenFacility =  findChosenFacility()
 const chosenMineral =  findChosenMineral()
 let html = `<div>1 ton of ${chosenMineral} from ${chosenFacility}</div>`
-chosenOptions.innerHTML = html
+chosenOptions.innerHTML += html
 
 return chosenOptions.innerHTML
 }
