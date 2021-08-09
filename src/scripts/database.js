@@ -47,6 +47,9 @@ const database = {
         return database.facilities.map(facility => ({...facility}))
     }
 
+    export const getAvailableResources = () => {
+        return database.availableResources.map(availableResource => ({...availableResource}))
+    }
 
     export const setFacilityMineral = (id) => {
         database.orderBuilder.facilityMineralId = id
@@ -63,7 +66,6 @@ const database = {
     }
     
     export const addPurchase = () => {
-        debugger
         let lastIndex = 0
     console.log(database.availableResources.length)
     if (database.availableResources.length === 0) {

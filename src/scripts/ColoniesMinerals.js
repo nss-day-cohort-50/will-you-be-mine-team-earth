@@ -1,5 +1,8 @@
-import { addPurchase } from "./database.js"
+import { addPurchase, getOrderBuilder } from "./database.js"
+import { ColonyAvailableResources } from "./ChosenOptions.js"
 
+const orderBuilder = getOrderBuilder()
+const colonyAvailableResources = ColonyAvailableResources()
 // created event listener for purchase button, calls addPurchase function, 
 
 document.addEventListener(
@@ -12,12 +15,23 @@ document.addEventListener(
     }
 )
 
-// export const ChosenOptions = () => {
-//     const chosenOptions = document.getElementById("choices")
-//     const chosenFacility =  findChosenFacility()
-//     const chosenMineral =  findChosenMineral()
-//     let html = `<div>1 ton of ${chosenMineral} from ${chosenFacility}</div>`
-//     chosenOptions.innerHTML = html
+//a fucntion that matches the name of the mineral to the id of the permanent state
+const findPurchasedMineral = () => {
+    const colonyAvailableResources = getColonyAvailableResources()
+    let purchasedMineral = ""
+    for (const mineral of colonyAvailableResources) {
+        if (mineral.id === orderBuilder.colonyAvailableResourcesId) {
+            purchasedMineral = mineral.type
+        }
+    }
+
+    return purchasedMineral
+}
+
+export const PurchasedMinerals = () => {
+    const purchasedMineral =  findPurchasedMineral()
+    let html = `<div>1 tons of ${purchasedMineral}</div>`
+    coloniesMinerals.innerHTML = html
     
-//     return chosenOptions.innerHTML
-//     }
+    return coloniesMinerals.innerHTML
+    }

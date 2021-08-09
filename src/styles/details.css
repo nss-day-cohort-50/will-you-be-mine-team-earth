@@ -23,3 +23,11 @@ ul {
     bottom: 0;
     margin: 4em 10em;
 }
+
+.mineralsPurchased {
+    border: dashed;
+}
+
+.colonyResources {
+    border: dashed;
+}
