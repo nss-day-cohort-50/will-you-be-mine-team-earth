@@ -25,7 +25,7 @@ const database = {
         {id: 4, name: "Portal 4", isActive: true} 
     ],
 
-    availableResources: [],
+    availableResources: [{id: 1, mineralType: "sneezium", mineralStock: 8}],
 
     orderBuilder: {} //hint from slack:  property:key pairs of {chosenGovernor: integer, selectedFacility: integer, selectedMinerals: []
 
@@ -47,6 +47,9 @@ const database = {
         return database.facilities.map(facility => ({...facility}))
     }
 
+    export const getAvailableResources = () => {
+        return database.availableResources.map(availableResource => ({...availableResource}))
+    }
 
     export const setFacilityMineral = (id) => {
         database.orderBuilder.facilityMineralId = id
@@ -62,3 +65,27 @@ const database = {
         return database.orderBuilder
     }
     
+    export const addPurchase = () => {
+        let lastIndex = 0
+    console.log(database.availableResources.length)
+    if (database.availableResources.length === 0) {
+        let lastIndex = 0
+    } else {
+        let lastIndex = database.availableResources.length - 1
+    }  
+    const newOrder = {...database.orderBuilder}
+    newOrder.id = database.availableResources[lastIndex].id + 1
+    database.availableResources.push(newOrder)
+    database.orderBuilder = {}
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
+
+document.addEventListener(
+    "click",
+    (event) => {
+        if (event.target.id === "purchaseButton") {
+            window.alert("purchase button clicked")
+            addPurchase()
+        }
+    }
+)
