@@ -31,7 +31,6 @@ const findChosenMineral = () => {
 
 // //a fucntion to match the name of the mineral to the id of the transient state
 export const ChosenOptions = () => {
-    debugger
 const chosenOptions = document.getElementById("choices")
 const chosenFacility =  findChosenFacility()
 const chosenMineral =  findChosenMineral()
