@@ -17,6 +17,7 @@ document.addEventListener(
 
 const orderBuilder = getOrderBuilder()
 
+//use orderbuilder id from setColony to find colony id and set colony.name to chosenColony var
 const findChosenColonyName = () => {
     const colonies = getColonies()
     let chosenColony = ""
@@ -28,6 +29,8 @@ const findChosenColonyName = () => {
 
     return chosenColony
 }
+
+//use foreign key of colonyMineral with orderbuilder to find colonymineral type
 const findChosenColonyMineralNames = () => {
     const coloniesMinerals = getColoniesMinerals()
     //[chosenColoniesMineralsType, chosenColoniesMineralsStock]
@@ -43,6 +46,7 @@ const findChosenColonyMineralNames = () => {
 
 
 
+//building out html for colonyMinerals for each colony with is rendered when governor is selected, using the find functions above 
 export const PurchasedMinerals = () => {
     const chosenColonyName = findChosenColonyName()
     const chosenColonyMineral = findChosenColonyMineralNames()

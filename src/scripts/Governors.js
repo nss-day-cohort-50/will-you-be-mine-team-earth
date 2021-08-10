@@ -2,6 +2,7 @@ import { getGovernors, getOrderBuilder, setGovernor, setColony } from "./databas
 
 
 //listens for user to select governor and adds governor.id to trans state
+//sets governor and colony in transient memory with split method and destructured array
 document.addEventListener(
     "change",
     (event) => {
