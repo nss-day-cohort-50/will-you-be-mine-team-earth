@@ -49,8 +49,8 @@ const database = {
         return database.facilities.map(facility => ({...facility}))
     }
 
-    export const getAvailableResources = () => {
-        return database.availableResources.map(availableResource => ({...availableResource}))
+    export const getColoniesMinerals = () => {
+        return database.coloniesMinerals.map(colonyMineral => ({...colonyMineral}))
     }
 
     export const setFacilityMineral = (id) => {
@@ -69,15 +69,15 @@ const database = {
     
     export const addPurchase = () => {
         let lastIndex = 0
-    console.log(database.availableResources.length)
-    if (database.availableResources.length === 0) {
+    console.log(database.coloniesMinerals.length)
+    if (database.coloniesMinerals.length === 0) {
         let lastIndex = 0
     } else {
-        let lastIndex = database.availableResources.length - 1
+        let lastIndex = database.coloniesMinerals.length - 1
     }  
     const newOrder = {...database.orderBuilder}
-    newOrder.id = database.availableResources[lastIndex].id + 1
-    database.availableResources.push(newOrder)
+    newOrder.id = database.coloniesMinerals[lastIndex].id + 1
+    database.coloniesMinerals.push(newOrder)
     database.orderBuilder = {}
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }

@@ -18,7 +18,7 @@ export const BeMine = () => {
             ${Governors()}
         </form>
             <section class="purchasedMinerals">
-        <h2>Available Resources For Colony</h2>
+        
             ${PurchasedMinerals()}
             </section>
         </aside>

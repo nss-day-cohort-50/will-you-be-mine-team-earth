@@ -1,4 +1,4 @@
-import { getOrderBuilder } from "./database.js"
+import { getColoniesMinerals, getOrderBuilder } from "./database.js"
 
 
 
@@ -30,9 +30,25 @@ const orderBuilder = getOrderBuilder()
 // }
 
 export const PurchasedMinerals = () => {
-    // const purchasedMineral =  findPurchasedMineral()
-    // let html = `<div>1 tons of ${purchasedMineral}</div>`
-    // coloniesMinerals.innerHTML = html
-    
-    // return coloniesMinerals.innerHTML
-    }
+    const coloniesMinerals = getColoniesMinerals()
+    let html = ``
+        const colonyMineralsNameArray = coloniesMinerals.map(
+            (colonyMineralsName) => {
+                return `
+                <h2>${colonyMineralsName.colonyName} Minerals</h2>
+                <ul>`
+            } 
+         ) 
+         const colonyMineralsTypeArray = coloniesMinerals.map(
+            (colonyMineralsType) => {
+                return `<li>
+                ${colonyMineralsType.mineralStock} tons of ${colonyMineralsType.mineralType}
+                </li>`
+            } 
+         ) 
+    html += colonyMineralsNameArray 
+    html += colonyMineralsTypeArray.join("")
+    html += `</ul>`
+    return html
+}
+
