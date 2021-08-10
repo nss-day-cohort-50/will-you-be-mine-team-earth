@@ -7,10 +7,9 @@ document.addEventListener(
     (event) => {
         const itemClicked = event.target
         if (itemClicked.id === "governors") {
-        const [governorId ,governorColonyId] = itemClicked.value.split("--")
+        const [governorId, governorColonyId] = itemClicked.value.split("--")
         setGovernor(parseInt(governorId))
         setColony(parseInt(governorColonyId))
-        console.log(governorColonyId)
         }
     }
 )
