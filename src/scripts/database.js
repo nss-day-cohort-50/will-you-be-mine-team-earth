@@ -25,7 +25,8 @@ const database = {
         {id: 4, name: "Portal 4", isActive: true} 
     ],
     coloniesMinerals: [
-        {id: 1, colonyName: "Abyss", mineralType: "sneezium", mineralStock: 6 }
+        {id: 1, colonyId: 1, mineralType: "sneezium", mineralStock: 6 },
+        {id: 2, colonyId: 4, mineralType: "hopium", mineralStock: 1 }
     ],
     // availableResources: [{id: 1, mineralType: "sneezium", mineralStock: 8}],
 

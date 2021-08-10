@@ -1,4 +1,4 @@
-import { getColoniesMinerals, getOrderBuilder, addPurchase, getColonies, getGovernors } from "./database.js"
+import { getColoniesMinerals, getOrderBuilder, addPurchase, getColonies } from "./database.js"
 
 
 
@@ -28,23 +28,33 @@ const findChosenColonyName = () => {
 
     return chosenColony
 }
+const findChosenColonyMineralNames = () => {
+    const coloniesMinerals = getColoniesMinerals()
+    //[chosenColoniesMineralsType, chosenColoniesMineralsStock]
+    let chosenColonyMineral = ""
+    for (const colonyMineral of coloniesMinerals) {
+        if (colonyMineral.colonyId === orderBuilder.colonyId) {
+           chosenColonyMineral += colonyMineral.mineralType
+        }
+    }
+
+    return chosenColonyMineral
+}
+
+
 
 export const PurchasedMinerals = () => {
     const chosenColonyName = findChosenColonyName()
-    const coloniesMinerals = getColoniesMinerals()
+    const chosenColonyMineral = findChosenColonyMineralNames()
     let html = "<h2> Colony Minerals</h2>"
     if (orderBuilder.governorId > 0){
-         html = `<h2> ${chosenColonyName} Minerals </h2>
-         <ul>`
-         const colonyMineralsTypeArray = coloniesMinerals.map(
-            (colonyMineralsType) => {
-                return `<li>
-                ${colonyMineralsType.mineralStock} tons of ${colonyMineralsType.mineralType}
-                </li>`
-            } 
-         ) 
-        html += colonyMineralsTypeArray.join("")
-        html += `</ul>`
+         html = `<h2> ${chosenColonyName} Minerals </h2>`
+        if (chosenColonyMineral) {
+        html += `
+        <ul> 
+            <li> tons of ${chosenColonyMineral} </li>
+        </ul>`
+        }
     }
     return html
 }
