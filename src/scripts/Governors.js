@@ -1,12 +1,16 @@
-import { getGovernors, getOrderBuilder, setGovernor } from "./database.js" 
+import { getGovernors, getOrderBuilder, setGovernor, setColony } from "./database.js" 
 
 
 //listens for user to select governor and adds governor.id to trans state
+//sets governor and colony in transient memory with split method and destructured array
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.id === "governors") {
-            setGovernor(parseInt(event.target.value))
+        const itemClicked = event.target
+        if (itemClicked.id === "governors") {
+        const [governorId, governorColonyId] = itemClicked.value.split("--")
+        setGovernor(parseInt(governorId))
+        setColony(parseInt(governorColonyId))
         }
     }
 )
@@ -23,10 +27,10 @@ export const Governors = () => {
         (governor) => {
             if (governor.id === chosenGovernor.governorId) {
                 return `    
-            <option name="governor" value="${governor.id}" selected>${governor.name}</option>`
+            <option name="governor" value="${governor.id}--${governor.colonyId}" selected>${governor.name}</option>`
             } else {
                 return `    
-                <option name="governor" value="${governor.id}">${governor.name}</option>`
+                <option name="governor" value="${governor.id}--${governor.colonyId}">${governor.name}</option>`
             }
         }
             

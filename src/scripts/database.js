@@ -7,10 +7,10 @@ const database = {
     ],
     governors: [
 
-        {id: 1, name: "Omni-man", isActive: true, colonyId: 1 },
-        {id: 2, name: "Machine Head", isActive: true, colonyId: 2},
-        {id: 3, name: "Atom Eve", isActive: false, colonyId: 3},
-        {id: 4, name: "Allen the Alien", isActive: true, colonyId: 4}
+        {id: 1, name: "Omni-man", isActive: true, colonyId: 4 },
+        {id: 2, name: "Machine Head", isActive: true, colonyId: 3},
+        {id: 3, name: "Atom Eve", isActive: false, colonyId: 2},
+        {id: 4, name: "Allen the Alien", isActive: true, colonyId: 1}
     ], 
     colonies: [
         {id: 1, name: "Stevetopia"},
@@ -25,7 +25,8 @@ const database = {
         {id: 4, name: "Portal 4", isActive: true} 
     ],
     coloniesMinerals: [
-        {id: 1, colonyName: "Abyss", mineralType: "sneezium", mineralStock: 6 }
+        {id: 1, colonyId: 1, mineralType: "sneezium", mineralStock: 6 },
+        {id: 2, colonyId: 4, mineralType: "hopium", mineralStock: 1 }
     ],
     // availableResources: [{id: 1, mineralType: "sneezium", mineralStock: 8}],
 
@@ -63,6 +64,10 @@ const database = {
         database.orderBuilder.governorId = id
         document.dispatchEvent(new CustomEvent("stateChanged"))
     }
+    export const setColony = (id) => {
+        database.orderBuilder.colonyId = id
+        document.dispatchEvent(new CustomEvent("stateChanged"))
+    }
     export const getOrderBuilder = () => {
         return database.orderBuilder
     }
@@ -70,14 +75,17 @@ const database = {
     export const addPurchase = () => {
         let lastIndex = 0
     console.log(database.coloniesMinerals.length)
-    if (database.coloniesMinerals.length === 0) {
-        let lastIndex = 0
-    } else {
-        let lastIndex = database.coloniesMinerals.length - 1
-    }  
+
     const newOrder = {...database.orderBuilder}
     newOrder.id = database.coloniesMinerals[lastIndex].id + 1
     database.coloniesMinerals.push(newOrder)
     database.orderBuilder = {}
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
+
+
+// if (database.coloniesMinerals.length === 0) {
+//     let lastIndex = 0
+// } else {
+//     let lastIndex = database.coloniesMinerals.length - 1
+// }  

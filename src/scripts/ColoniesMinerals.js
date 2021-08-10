@@ -1,4 +1,4 @@
-import { getColoniesMinerals, getOrderBuilder } from "./database.js"
+import { getColoniesMinerals, getOrderBuilder, addPurchase, getColonies } from "./database.js"
 
 
 
@@ -9,6 +9,7 @@ document.addEventListener(
     (event) => {
         if (event.target.id === "purchaseButton") {
             window.alert("purchase button clicked")
+            addPurchase()
             
         }
     }
@@ -16,39 +17,49 @@ document.addEventListener(
 
 const orderBuilder = getOrderBuilder()
 
-//a fucntion that matches the name of the mineral to the id of the permanent state
-// const findPurchasedMineral = () => {
-//     const colonyAvailableResources = getColonyAvailableResources()
-//     let purchasedMineral = ""
-//     for (const mineral of colonyAvailableResources) {
-//         if (mineral.id === orderBuilder.colonyAvailableResourcesId) {
-//             purchasedMineral = mineral.type
-//         }
-//     }
+//use orderbuilder id from setColony to find colony id and set colony.name to chosenColony var
+const findChosenColonyName = () => {
+    const colonies = getColonies()
+    let chosenColony = ""
+    for (const colony of colonies) {
+        if (colony.id === orderBuilder.colonyId) {
+            chosenColony = colony.name
+        }
+    }
 
-//     return purchasedMineral
-// }
+    return chosenColony
+}
 
-export const PurchasedMinerals = () => {
+//use foreign key of colonyMineral with orderbuilder to find colonymineral type
+const findChosenColonyMineralNames = () => {
     const coloniesMinerals = getColoniesMinerals()
-    let html = ``
-        const colonyMineralsNameArray = coloniesMinerals.map(
-            (colonyMineralsName) => {
-                return `
-                <h2>${colonyMineralsName.colonyName} Minerals</h2>
-                <ul>`
-            } 
-         ) 
-         const colonyMineralsTypeArray = coloniesMinerals.map(
-            (colonyMineralsType) => {
-                return `<li>
-                ${colonyMineralsType.mineralStock} tons of ${colonyMineralsType.mineralType}
-                </li>`
-            } 
-         ) 
-    html += colonyMineralsNameArray 
-    html += colonyMineralsTypeArray.join("")
-    html += `</ul>`
+    //[chosenColoniesMineralsType, chosenColoniesMineralsStock]
+    let chosenColonyMineral = ""
+    for (const colonyMineral of coloniesMinerals) {
+        if (colonyMineral.colonyId === orderBuilder.colonyId) {
+           chosenColonyMineral += colonyMineral.mineralType
+        }
+    }
+
+    return chosenColonyMineral
+}
+
+
+
+//building out html for colonyMinerals for each colony with is rendered when governor is selected, using the find functions above 
+export const PurchasedMinerals = () => {
+    const chosenColonyName = findChosenColonyName()
+    const chosenColonyMineral = findChosenColonyMineralNames()
+    let html = "<h2> Colony Minerals</h2>"
+    if (orderBuilder.governorId > 0){
+         html = `<h2> ${chosenColonyName} Minerals </h2>`
+        if (chosenColonyMineral) {
+        html += `
+        <ul> 
+            <li> tons of ${chosenColonyMineral} </li>
+        </ul>`
+        }
+    }
     return html
 }
 

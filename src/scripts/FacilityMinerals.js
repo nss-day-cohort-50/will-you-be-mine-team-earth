@@ -5,7 +5,6 @@ document.addEventListener(
     "click",
     (event) => {
         if (event.target.name === "mineral") {
-           window.alert(event.target.value)
           setFacilityMineral(parseInt(event.target.value))
           ChosenOptions()
         }
