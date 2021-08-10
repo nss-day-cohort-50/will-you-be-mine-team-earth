@@ -35,7 +35,7 @@ export const PurchasedMinerals = () => {
     let html = "<h2> Colony Minerals</h2>"
     if (orderBuilder.governorId > 0){
          html = `<h2> ${chosenColonyName} Minerals </h2>
-        </ul>`
+         <ul>`
          const colonyMineralsTypeArray = coloniesMinerals.map(
             (colonyMineralsType) => {
                 return `<li>

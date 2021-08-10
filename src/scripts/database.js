@@ -64,7 +64,6 @@ const database = {
         document.dispatchEvent(new CustomEvent("stateChanged"))
     }
     export const setColony = (id) => {
-        debugger
         database.orderBuilder.colonyId = id
         document.dispatchEvent(new CustomEvent("stateChanged"))
     }
