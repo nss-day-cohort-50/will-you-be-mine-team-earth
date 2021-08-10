@@ -81,13 +81,3 @@ const database = {
     database.orderBuilder = {}
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
-
-document.addEventListener(
-    "click",
-    (event) => {
-        if (event.target.id === "purchaseButton") {
-            window.alert("purchase button clicked")
-            addPurchase()
-        }
-    }
-)
