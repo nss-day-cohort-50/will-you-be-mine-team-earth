@@ -24,8 +24,10 @@ const database = {
         {id: 3,name: "Portal 3",  isActive: true},
         {id: 4, name: "Portal 4", isActive: true} 
     ],
-
-    availableResources: [{id: 1, mineralType: "sneezium", mineralStock: 8}],
+    coloniesMinerals: [
+        {id: 1, colonyName: "Abyss", mineralType: "sneezium", mineralStock: 6 }
+    ],
+    // availableResources: [{id: 1, mineralType: "sneezium", mineralStock: 8}],
 
     orderBuilder: {} //hint from slack:  property:key pairs of {chosenGovernor: integer, selectedFacility: integer, selectedMinerals: []
 
