@@ -1,6 +1,6 @@
 import { Governors } from "./Governors.js"
 import { FacilityList } from "./Facilities.js"
-import { ColonyAvailableResources } from "./ChosenOptions.js"
+import { PurchasedMinerals } from "./ColoniesMinerals.js"
 
 export const BeMine = () => {
     return `
@@ -18,8 +18,8 @@ export const BeMine = () => {
             ${Governors()}
         </form>
             <section class="purchasedMinerals">
-        <h2>Available Resources For Colony</h2>
-            ${ColonyAvailableResources()}
+        
+            ${PurchasedMinerals()}
             </section>
         </aside>
     `   
