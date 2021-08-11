@@ -34,20 +34,35 @@ const findChosenColonyName = () => {
 const findChosenColonyMineralNames = () => {
     const coloniesMinerals = getColoniesMinerals()
     //[chosenColoniesMineralsType, chosenColoniesMineralsStock]
-    let chosenColonyMineral = ""
+    let chosenColonyMineralName = ""
     for (const colonyMineral of coloniesMinerals) {
         if (colonyMineral.colonyId === orderBuilder.colonyId) {
-           chosenColonyMineral += colonyMineral.mineralType
+           chosenColonyMineralName += colonyMineral.mineralType
         }
     }
 
-    return chosenColonyMineral
+    return chosenColonyMineralName
+}
+
+//use forei
+const findChosenColonyMineralAmount = () => {
+    const coloniesMinerals = getColoniesMinerals()
+    //[chosenColoniesMineralsType, chosenColoniesMineralsStock]
+    let chosenColonyMineralAmount = ""
+    for (const colonyMineral of coloniesMinerals) {
+        if (colonyMineral.colonyId === orderBuilder.colonyId) {
+           chosenColonyMineralAmount += colonyMineral.mineralStock
+        }
+    }
+
+    return chosenColonyMineralAmount
 }
 
 
 
 //building out html for colonyMinerals for each colony with is rendered when governor is selected, using the find functions above 
 export const PurchasedMinerals = () => {
+    const chosenColonyMineralAmount = findChosenColonyMineralAmount()
     const chosenColonyName = findChosenColonyName()
     const chosenColonyMineral = findChosenColonyMineralNames()
     let html = "<h2> Colony Minerals</h2>"
@@ -56,7 +71,7 @@ export const PurchasedMinerals = () => {
         if (chosenColonyMineral) {
         html += `
         <ul> 
-            <li> tons of ${chosenColonyMineral} </li>
+            <li> ${chosenColonyMineralAmount} tons of ${chosenColonyMineral} </li>
         </ul>`
         }
     }
